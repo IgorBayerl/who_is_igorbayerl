@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mask-inner {
+  clip-path: circle(max(150vw, 150vh) at 0% 0%);
+  transition: clip-path 0.5s ease-in-out; /* specify transition properties */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 0.4s ease-in-out;
+}
