@@ -1,8 +1,8 @@
-import Link from "next/link";
-import React from "react";
-import Layout from "./Layout";
+import Link from 'next/link'
+import React from 'react'
+import Layout from './Layout'
 
-const Footer = () => {
+export default function Footer(): JSX.Element {
   return (
     <footer
       className="w-full border-t-2 border-solid border-dark
@@ -34,6 +34,4 @@ const Footer = () => {
       </Layout>
     </footer>
   )
-};
-
-export default Footer;
+}

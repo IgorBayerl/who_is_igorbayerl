@@ -96,7 +96,21 @@ function FeaturedProject({
   )
 }
 
-const Project = ({ title, type, img, link, github }) => {
+interface IProjectProps {
+  title: string
+  type: string
+  img: string
+  link: string
+  github: string
+}
+
+function Project({
+  title,
+  type,
+  img,
+  link,
+  github,
+}: IProjectProps): JSX.Element {
   return (
     <article
       className="w-full flex flex-col items-center justify-center rounded-2xl 
@@ -155,7 +169,7 @@ const Project = ({ title, type, img, link, github }) => {
   )
 }
 
-const projects = () => {
+export default function projects(): JSX.Element {
   const project1 = '/images/projects/crypto-screener-cover-image.jpg'
   const project2 = '/images/projects/nft-collection-website-cover-image.jpg'
   const project3 = '/images/projects/fashion-studio-website.jpg'
@@ -247,4 +261,4 @@ const projects = () => {
   )
 }
 
-export default projects
+

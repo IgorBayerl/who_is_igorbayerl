@@ -8,13 +8,19 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion'
 import Head from 'next/head'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
+import useIsIframe from '~/components/hooks/useIsIframe'
 
-function AnimatedNumbers({ value }) {
+interface IAnimatedNumbersProps {
+  value: number
+}
+
+function AnimatedNumbers({ value }: IAnimatedNumbersProps): JSX.Element {
   const ref = useRef<HTMLSpanElement>(null)
 
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, { duration: 3000 })
   const isInView = useInView(ref, { once: true })
+  const isIframe = useIsIframe()
 
   useEffect(() => {
     if (isInView) {
@@ -30,11 +36,13 @@ function AnimatedNumbers({ value }) {
     })
   }, [springValue, value])
 
+  if (isIframe) return <span>{value}</span>
+
   return <span ref={ref}></span>
 }
 
 export default function about(): JSX.Element {
-  const profilePic = '/images/profile/developer-pic-2.jpg'
+  const profilePic = '/images/profile/developer-pic-1.jpg'
 
   const satisfiedClients = 100
   const projectsCompleted = 50
@@ -98,9 +106,7 @@ bg-light p-8 dark:bg-dark dark:border-light xl:col-span-4 md:order-1 md:col-span
                 alt="Igor Bayerl"
                 className="w-full h-auto rounded-2xl"
                 priority
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+                sizes="(max-width: 768px) 100vw,(max-width: 1200px) 50vw,33vw"
               />
             </div>
 

@@ -1,22 +1,24 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
-import {
-  TwitterIcon,
-  DribbbleIcon,
-  GithubIcon,
-  LinkedInIcon,
-  PinterestIcon,
-  SunIcon,
-  MoonIcon,
-} from './Icons'
+
 import Logo from './Logo'
 import { motion } from 'framer-motion'
 import ToggleThemeButton from './ToggleThemeButton'
 import { FiSun, FiMoon } from 'react-icons/fi'
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 
-const CustomLink = ({ href, title, className = '' }) => {
+interface ICustomLinkProps {
+  href: string
+  title: string
+  className?: string
+}
+
+function CustomLink({
+  href,
+  title,
+  className = '',
+}: ICustomLinkProps): JSX.Element {
   const router = useRouter()
 
   return (
@@ -37,7 +39,18 @@ const CustomLink = ({ href, title, className = '' }) => {
   )
 }
 
-const CustomMobileLink = ({ href, title, className = '', toggle }) => {
+interface ICustomMobileLinkProps {
+  href: string
+  title: string
+  className?: string
+  toggle: () => void
+}
+function CustomMobileLink({
+  href,
+  title,
+  className = '',
+  toggle,
+}: ICustomMobileLinkProps): JSX.Element {
   const router = useRouter()
 
   const handleClick = () => {
@@ -67,7 +80,7 @@ const CustomMobileLink = ({ href, title, className = '', toggle }) => {
   )
 }
 
-const NavBar = () => {
+export default function NavBar(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
   const [mode, setMode] = useThemeSwitcher()
   const handleClick = () => {
@@ -273,5 +286,3 @@ const NavBar = () => {
     </header>
   )
 }
-
-export default NavBar

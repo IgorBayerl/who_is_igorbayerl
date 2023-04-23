@@ -38,7 +38,6 @@ export default function useThemeSwitcher(): [string, (mode: string) => void] {
   }, [])
 
   useEffect(() => {
-    handleSpawnIframe(mode)
     if (mode === 'dark') {
       window.localStorage.setItem('theme', 'dark')
       document.documentElement.classList.add('dark')
@@ -49,10 +48,6 @@ export default function useThemeSwitcher(): [string, (mode: string) => void] {
       document.documentElement.classList.remove('dark')
     }
   }, [mode])
-
-  const handleSpawnIframe = (theme) => {
-    console.log('theme', theme)
-  }
 
   return [mode, setMode]
 }

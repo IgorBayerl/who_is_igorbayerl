@@ -4,7 +4,7 @@
 
 .mask-inner {
   clip-path: circle(max(150vw, 150vh) at 0% 0%);
-  transition: clip-path 0.5s ease-in-out; /* specify transition properties */
+  transition: clip-path 0.5s ease-in-out;
 }
 
 @keyframes rotate {

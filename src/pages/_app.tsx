@@ -6,8 +6,14 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React from 'react'
 
-export default function App({ Component, pageProps }): JSX.Element {
+interface IAppProps {
+  Component: React.FC
+  pageProps: any
+}
+
+export default function App({ Component, pageProps }: IAppProps): JSX.Element {
   const router = useRouter()
+  console.warn = () => {}
   return (
     <>
       <Head>

@@ -2,7 +2,14 @@ import React, { useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import LiIcon from './LiIcon'
 
-const Details = ({ type, time, place, info }) => {
+interface IDetailsProps {
+  type: string
+  time: string
+  place: string
+  info: string
+}
+
+function Details({ type, time, place, info }: IDetailsProps): JSX.Element {
   const ref = useRef(null)
   return (
     <li
@@ -27,7 +34,7 @@ const Details = ({ type, time, place, info }) => {
   )
 }
 
-const Education = () => {
+function Education(): JSX.Element {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,

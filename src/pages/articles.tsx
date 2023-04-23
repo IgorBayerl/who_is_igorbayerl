@@ -10,19 +10,27 @@ import TransitionEffect from '../components/TransitionEffect'
 
 const FramerImage = motion(Image)
 
-const MovingImg = ({ title, img, link }) => {
+interface IMovingImgProps {
+  title: string
+  img: string
+  link: string
+}
+
+function MovingImg({ title, img, link }: IMovingImgProps): JSX.Element {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const imgRef = useRef<HTMLImageElement>(null)
 
-  function handleMouse(event) {
+  function handleMouse(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     if (!imgRef.current) return
     imgRef.current.style.display = 'inline-block'
     x.set(event.pageX)
     y.set(-10)
   }
 
-  function handleMouseLeave(event) {
+  function handleMouseLeave(
+    event: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) {
     if (!imgRef.current) return
     imgRef.current.style.display = 'none'
     x.set(0)
@@ -54,7 +62,14 @@ const MovingImg = ({ title, img, link }) => {
   )
 }
 
-const Article = ({ img, title, date, link }) => {
+interface IArticleProps {
+  img: string
+  title: string
+  date: string
+  link: string
+}
+
+function Article({ img, title, date, link }: IArticleProps): JSX.Element {
   return (
     <motion.li
       initial={{ y: 200 }}
@@ -74,7 +89,21 @@ const Article = ({ img, title, date, link }) => {
   )
 }
 
-const FeaturedArticle = ({ img, title, time, summary, link }) => {
+interface IFeaturedArticleProps {
+  img: string
+  title: string
+  time: string
+  summary: string
+  link: string
+}
+
+function FeaturedArticle({
+  img,
+  title,
+  time,
+  summary,
+  link,
+}: IFeaturedArticleProps): JSX.Element {
   return (
     <li className="relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl dark:bg-dark dark:border-light">
       <div
