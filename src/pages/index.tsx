@@ -15,13 +15,37 @@ export default function Home() {
               Online Game Developer (Backend)
             </span>{' '}
             & <span className="text-blue-400">QA Automation Engineer</span> at{' '}
-            <span className="text-green-400">Crytek</span>
+            <a
+              href="https://www.crytek.com/"
+              className="text-green-400 hover:text-green-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Crytek
+            </a>
           </p>
           <p className="mb-2">
             Currently working on{' '}
-            <span className="text-orange-400">Hunt Showdown: 1896</span>
+            <a
+              href="https://store.steampowered.com/app/594650/Hunt_Showdown/"
+              className="text-orange-400 hover:text-orange-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hunt Showdown: 1896
+            </a>
           </p>
-          <p className="text-gray-300">📍 Living in Germany</p>
+          <p className="text-gray-300">
+            📍 Living in{' '}
+            <a
+              href="https://www.google.com/maps/place/Frankfurt"
+              className="text-blue-400 hover:text-blue-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Germany
+            </a>
+          </p>
         </div>
 
         {/* Contact */}
@@ -53,7 +77,7 @@ export default function Home() {
             <div>
               <span className="text-gray-400">Email:</span>{' '}
               <a
-                href="mailto:igorbayerl@gmail.com"
+                href="mailto:dev.igorbayerl@gmail.com"
                 className="text-blue-400 hover:text-blue-300 underline"
               >
                 dev.igorbayerl@gmail.com
@@ -68,13 +92,60 @@ export default function Home() {
           <p className="text-gray-300 leading-relaxed">
             Backend developer and QA automation engineer passionate about online
             gaming. Working on exciting projects in the gaming industry,
-            currently focused on Hunt Showdown: 1896 at Crytek. Based in Germany
+            currently focused on{' '}
+            <a
+              href="https://store.steampowered.com/app/594650/Hunt_Showdown/"
+              className="text-orange-400 hover:text-orange-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hunt Showdown: 1896
+            </a>{' '}
+            at{' '}
+            <a
+              href="https://www.crytek.com/"
+              className="text-green-400 hover:text-green-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Crytek
+            </a>
+            . Based in{' '}
+            <a
+              href="https://www.google.com/maps/place/Frankfurt"
+              className="text-blue-400 hover:text-blue-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Germany
+            </a>{' '}
             and always interested in new technologies and gaming innovations.
           </p>
           <p className="text-gray-300 leading-relaxed">
             Currently working with GO and creating my own tools that make the
             team keep the speed.
           </p>
+        </div>
+
+        {/* Current Active Open Projects */}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-4">
+            Current Active Open Projects
+          </h2>
+          <div>
+            <a
+              href="https://github.com/IgorBayerl/AdlerCov"
+              className="text-lg font-semibold text-purple-400 hover:text-purple-300 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AdlerCov
+            </a>
+            <p className="text-gray-300 mt-1">
+              A report and static analysis tool for code coverage and complexity
+              of code.
+            </p>
+          </div>
         </div>
       </div>
     </div>
