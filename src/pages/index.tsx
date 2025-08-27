@@ -1,93 +1,82 @@
-import React from 'react'
-import AnimatedText from '../components/AnimatedText'
-import HireMe from '../components/HireMe'
-import Layout from '../components/Layout'
-import TransitionEffect from '../components/TransitionEffect'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-
 export default function Home() {
-  const profilePic = '/images/profile/developer-pic-3.png'
-
   return (
-    <>
-      <Head>
-        <title>Awesome Portfolio Built with Nextjs</title>
-        <meta
-          name="description"
-          content="Explore Igor Bayerl's Next.js developer portfolio and 
-        discover the latest webapp projects and software engineering articles. 
-        Showcase your skills as a full-stack developer and software engineer."
-        />
-      </Head>
-      <TransitionEffect />
+    <div className="min-h-screen bg-gray-900 text-gray-100 p-8 font-mono">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold mb-2">Hey, Igor Bayerl here! 👋</h1>
+        </div>
 
-      <main className="flex items-center text-dark w-full min-h-screen dark:text-light sm:items-start">
-        <Layout className="pt-0 md:pt-16 sm:pt-16">
-          <div className="flex items-center justify-between w-full lg:flex-col">
-            <div className="w-1/2 md:w-full relative">
-              <Image
-                width={580}
-                height={580}
-                src={profilePic}
-                alt="Igor Bayerl"
-                className="w-full h-auto lg:hidden md:inline-block md:w-full"
-                priority
-                sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              50vw"
-              />
+        {/* Current Job */}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-4">Current Position</h2>
+          <p className="mb-2">
+            <span className="text-blue-400">
+              Online Game Developer (Backend)
+            </span>{' '}
+            & <span className="text-blue-400">QA Automation Engineer</span> at{' '}
+            <span className="text-green-400">Crytek</span>
+          </p>
+          <p className="mb-2">
+            Currently working on{' '}
+            <span className="text-orange-400">Hunt Showdown: 1896</span>
+          </p>
+          <p className="text-gray-300">📍 Living in Germany</p>
+        </div>
+
+        {/* Contact */}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-4">Get in Touch</h2>
+          <div className="space-y-2">
+            <div>
+              <span className="text-gray-400">GitHub:</span>{' '}
+              <a
+                href="https://github.com/igorbayerl"
+                className="text-blue-400 hover:text-blue-300 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/igorbayerl
+              </a>
             </div>
-            <div className="w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center">
-              <AnimatedText
-                text="Igor Bayerl"
-                className="!text-6xl !text-left 
-                xl:!text-5xl lg:!text-center lg:!text=6xl md:!text-5xl sm:!text-3xl my-3
-                "
-              />
-              <div className="h-1 my-3 w-full bg-gray-700 dark:bg-gray-300" />
-              <AnimatedText
-                text="Turning Vision Into Reality With Code."
-                className="!text-6xl !text-left 
-                xl:!text-5xl lg:!text-center lg:!text=6xl md:!text-5xl sm:!text-3xl  my-3
-                "
-              />
-              <p className="my-4 text-base font-medium md:text-sm sm:text-xs">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in web
-                development.
-              </p>
-              <div className="flex items-center self-start mt-2 lg:self-center">
-                <Link
-                  href="/projects"
-                  className="flex items-center bg-dark text-light p-2.5 px-6
-                  rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
-                  border-2 border-solid border-transparent hover:border-dark
-                  
-                  dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:text-light
-                  hover:dark:border-light md:p-2 md:px-4 md:text-base
-                  transition duration-200 ease-in-out
-                  whitespace-nowrap
-                  "
-                >
-                  Look at my work!
-                </Link>
-                <Link
-                  href="mailto:abcd@gmail.com"
-                  target={'_blank'}
-                  className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light md:text-base"
-                >
-                  Contact
-                </Link>
-              </div>
+            <div>
+              <span className="text-gray-400">LinkedIn:</span>{' '}
+              <a
+                href="https://linkedin.com/in/igorbayerl"
+                className="text-blue-400 hover:text-blue-300 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                linkedin.com/in/igorbayerl
+              </a>
+            </div>
+            <div>
+              <span className="text-gray-400">Email:</span>{' '}
+              <a
+                href="mailto:igorbayerl@gmail.com"
+                className="text-blue-400 hover:text-blue-300 underline"
+              >
+                dev.igorbayerl@gmail.com
+              </a>
             </div>
           </div>
-        </Layout>
+        </div>
 
-        <HireMe />
-      </main>
-    </>
+        {/* About */}
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-4">About Me</h2>
+          <p className="text-gray-300 leading-relaxed">
+            Backend developer and QA automation engineer passionate about online
+            gaming. Working on exciting projects in the gaming industry,
+            currently focused on Hunt Showdown: 1896 at Crytek. Based in Germany
+            and always interested in new technologies and gaming innovations.
+          </p>
+          <p className="text-gray-300 leading-relaxed">
+            Currently working with GO and creating my own tools that make the
+            team keep the speed.
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
