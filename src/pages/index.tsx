@@ -134,12 +134,12 @@ export default function Home() {
           </h2>
           <div>
             <a
-              href="https://github.com/IgorBayerl/AdlerCov"
+              href="https://github.com/IgorBayerl/nanovision"
               className="text-lg font-semibold text-purple-400 hover:text-purple-300 underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              AdlerCov
+              NanoVision
             </a>
             <p className="text-gray-300 mt-1">
               A report and static analysis tool for code coverage and complexity
