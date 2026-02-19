@@ -121,9 +121,9 @@ export default function Home() {
             </a>{' '}
             and always interested in new technologies and gaming innovations.
           </p>
-          <p className="text-gray-300 leading-relaxed">
-            Currently working with GO and creating my own tools that make the
-            team keep the speed.
+          <p className="text-gray-300 leading-relaxed mt-2">
+            Currently mostly working with Go, creating my own tools that help the
+            team keep speed and improve quality of delivery.
           </p>
         </div>
 
@@ -132,19 +132,39 @@ export default function Home() {
           <h2 className="text-xl font-bold mb-4">
             Current Active Open Projects
           </h2>
-          <div>
-            <a
-              href="https://github.com/IgorBayerl/nanovision"
-              className="text-lg font-semibold text-purple-400 hover:text-purple-300 underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              NanoVision
-            </a>
-            <p className="text-gray-300 mt-1">
-              A report and static analysis tool for code coverage and complexity
-              of code.
-            </p>
+          <div className="space-y-6">
+            {/* Project 1: NanoVision */}
+            <div>
+              <a
+                href="https://github.com/IgorBayerl/nanovision"
+                className="text-lg font-semibold text-purple-400 hover:text-purple-300 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NanoVision
+              </a>
+              <p className="text-gray-300 mt-1">
+                A report and static analysis tool for code coverage and complexity
+                of code.
+              </p>
+            </div>
+
+            {/* Project 2: NanoCoverage Godot */}
+            <div>
+              <a
+                href="https://github.com/IgorBayerl/nano-coverage-godot"
+                className="text-lg font-semibold text-purple-400 hover:text-purple-300 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NanoCoverage Godot
+              </a>
+              <p className="text-gray-300 mt-1">
+                First code coverage tool for Godot GDScript. Instruments the
+                code and generates code coverage reports, also integrates with
+                GdUnit4 and other tools.
+              </p>
+            </div>
           </div>
         </div>
       </div>
